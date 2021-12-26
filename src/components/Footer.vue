@@ -96,6 +96,11 @@ footer {
         gap: 16px;
         list-style: none;
         display: flex;
+        .link {
+          &:hover {
+            color: #1eb8b8;
+          }
+        }
       }
       .col-1,
       .col-2 {
@@ -123,6 +128,10 @@ footer {
               width: 24px;
               height: auto;
               color: #fff;
+
+              &:hover {
+                color: #1eb8b8;
+              }
             }
           }
         }
@@ -141,6 +150,10 @@ footer {
             font-weight: 500;
             color: #fff;
             text-decoration: none;
+
+            &:hover {
+              color: #1eb8b8;
+            }
           }
         }
       }

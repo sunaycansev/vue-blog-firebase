@@ -1,8 +1,10 @@
 <template>
   <div class="app-wrapper">
-    <Navigation />
-    <router-view></router-view>
-    <Footer />
+    <div class="app">
+      <Navigation />
+      <router-view></router-view>
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -43,5 +45,26 @@ export default {
 }
 .link-light {
   color: #fff;
+}
+.arrow {
+  margin-left: 8px;
+  width: 12px;
+  path {
+    fill: #000;
+  }
+}
+.arrow-light {
+  path {
+    fill: #fff;
+  }
+}
+
+.blog-card-wrap {
+  position: relative;
+  padding: 80px 16px;
+  background-color: #f1f1f1;
+  @media (min-width: 500px) {
+    padding: 100px 16px;
+  }
 }
 </style>
