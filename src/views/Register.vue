@@ -30,6 +30,7 @@
           <input type="text" placeholder="Password" v-model="password" />
           <Password class="icon" />
         </div>
+        <div class="error" v-show="error">{{ this.errorMsg }}</div>
       </div>
 
       <button>Sign Up</button>
@@ -43,6 +44,9 @@
 import Email from "../assets/Icons/envelope-regular.svg";
 import Password from "../assets/Icons/lock-alt-solid.svg";
 import User from "../assets/Icons/user-alt-light.svg";
+import firebase from "firebase/app";
+import "firebase/auth";
+import db from "../firebase/firebaseInıt";
 export default {
   name: "Register",
   data() {
@@ -54,7 +58,24 @@ export default {
         password: null,
         userName: null,
       },
+      error: null,
+      errorMsg: null,
     };
+  },
+  methods: {
+    async register() {
+      if (
+        this.userData.firstName !== "" ||
+        this.userData.lastName !== "" ||
+        this.userData.email !== "" ||
+        this.userData.password !== "" ||
+        this.userData.userName !== ""
+      ) {
+        return;
+      }
+      this.error = true;
+      this.errorMsg = "Please fill out all the fields!";
+    },
   },
   components: {
     User,
